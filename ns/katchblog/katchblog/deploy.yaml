@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: katchblog
+  namespace: katchblog
+spec: 
+  selector:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: katchblog
+    spec:
+      containers:
+      - name: katchblog
+        image: jonas27test/goserver:v1.0.0
+        ports:
+        - name: http
+          containerPort: 8080
+        volumeMounts:
+          - mountPath: /static
+            name: katchblog-storage
+      volumes:
+      - name: katchblog-storage
+        hostPath:
+          path: "/volumes/katchblog"
+      - name: katchblog-tls
+        secret:
+          secretName: katchblog-secret
+      restartPolicy: Always

@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+  namespace: katchblog
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://katchblog.com"
+    nginx.ingress.kubernetes.io/rewrite-target: /*
+spec:
+  tls:
+  - hosts:
+    - katchblog.com
+    - www.katchblog.com
+    secretName: katchblog-cert
+  - host: isso.katchblog.com
+    http:
+      paths:
+      - path: /*
+        pathType: Prefix
+        backend:
+          serviceName: isso
+          servicePort: 80

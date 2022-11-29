@@ -1,0 +1,15 @@
+helmGlobals:
+  chartHome: "../../../charts/"
+
+helmCharts:
+- name: nginx-ingress
+  includeCRDs: true
+  namespace: nginx-ingress
+  releaseName: nginx-ingress
+  valuesFile: values.yaml
+# - name: nginx-ingress
+#   repo: https://helm.nginx.com/stable
+#   releaseName: nginx-ingress
+#   namespace: nginx-ingress
+#   includeCRDs: true
+

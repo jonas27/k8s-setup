@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: isso
+  namespace: katchblog
+spec: 
+  selector:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: isso
+    spec:
+      containers:
+      - name: isso
+        image: jonas27test/isso:latest
+        args: ["/isso/bin/isso","-c", "/config/isso.cfg"]
+        ports:
+        - name: http
+          containerPort: 8080
+        volumeMounts:
+          - mountPath: /db
+            name: isso-storage
+          - mountPath: /config
+            name: isso-config
+      volumes:
+      - name: isso-config
+        hostPath:
+          path: "/volumes/katchblog/isso-config"
+      - name: isso-storage
+        hostPath:
+          path: "/volumes/katchblog/isso-storage"
+      restartPolicy: Always
