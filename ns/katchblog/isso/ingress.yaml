@@ -13,11 +13,14 @@ spec:
     - katchblog.com
     - www.katchblog.com
     secretName: katchblog-cert
+  rules:
   - host: isso.katchblog.com
     http:
       paths:
       - path: /*
         pathType: Prefix
         backend:
-          serviceName: isso
-          servicePort: 80
+          service:
+            name: isso
+            port: 
+              name: http
