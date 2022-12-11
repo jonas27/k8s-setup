@@ -49,7 +49,7 @@ controller:
     repository: nginx/nginx-ingress
 
     ## The tag of the Ingress Controller image.
-    tag: "2.4.1"
+    tag: "2.4.2"
 
     ## The digest of the Ingress Controller image.
     ## If digest is specified it has precedence over tag and will be used instead
@@ -265,7 +265,7 @@ controller:
     # name: nginx-ingress
 
     ## Whether to automatically allocate NodePorts (only for LoadBalancers).
-    allocateLoadBalancerNodePorts: true
+    # allocateLoadBalancerNodePorts: false
 
     ## Dual stack preference.
     ## Valid values: SingleStack, PreferDualStack, RequireDualStack
@@ -411,41 +411,3 @@ nginxServiceMesh:
   ## Enables NGINX Service Mesh workload to route egress traffic through the Ingress Controller.
   ## Requires nginxServiceMesh.enable
   enableEgress: false
-
-
-
-# values-icp.yaml
-controller:
-  kind: daemonset
-  nginxplus: true
-  image:
-    repository: mycluster.icp:8500/kube-system/nginx-plus-ingress
-    tag: "2.4.1"
-  nodeSelector:
-    beta.kubernetes.io/arch: "amd64"
-    proxy: true
-  terminationGracePeriodSeconds: 60
-  tolerations:
-    - key: "dedicated"
-      operator: "Exists"
-      effect: "NoSchedule"
-    - key: "CriticalAddonsOnly"
-      operator: "Exists"
-
-# values-nsm.yaml
-controller:
-  nginxplus: true
-  image:
-    repository: nginx-plus-ingress
-    tag: "2.4.1"
-  enableLatencyMetrics: true
-nginxServiceMesh:
-  enable: true
-  enableEgress: true
-
-# values-plus.yaml
-controller:
-  nginxplus: true
-  image:
-    repository: nginx-plus-ingress
-    tag: "2.4.1"

@@ -1,3 +1,7 @@
+# https://kubernetes.github.io/ingress-nginx/deploy/baremetal/#over-a-nodeport-service
+
+namespace: nginx-ingress
+
 helmGlobals:
   chartHome: "../../../charts/"
 
@@ -7,9 +11,5 @@ helmCharts:
   namespace: nginx-ingress
   releaseName: nginx-ingress
   valuesFile: values.yaml
-# - name: nginx-ingress
-#   repo: https://helm.nginx.com/stable
-#   releaseName: nginx-ingress
-#   namespace: nginx-ingress
-#   includeCRDs: true
-
+  # enable repo for new download
+  # repo: https://helm.nginx.com/stable
