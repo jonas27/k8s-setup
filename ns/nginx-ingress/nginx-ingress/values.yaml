@@ -415,33 +415,33 @@ nginxServiceMesh:
 
 
 # values-icp.yaml
-controller:
-  kind: daemonset
-  nginxplus: false
-  image:
-    repository: mycluster.icp:8500/kube-system/nginx-ingress
-    tag: "2.4.1"
-  nodeSelector:
-    beta.kubernetes.io/arch: "amd64"
-    proxy: true
-  terminationGracePeriodSeconds: 60
-  tolerations:
-    - key: "dedicated"
-      operator: "Exists"
-      effect: "NoSchedule"
-    - key: "CriticalAddonsOnly"
-      operator: "Exists"
+# controller:
+#   kind: daemonset
+#   nginxplus: false
+#   image:
+#     repository: mycluster.icp:8500/kube-system/nginx-ingress
+#     tag: "2.4.1"
+#   nodeSelector:
+#     beta.kubernetes.io/arch: "amd64"
+#     proxy: true
+#   terminationGracePeriodSeconds: 60
+#   tolerations:
+#     - key: "dedicated"
+#       operator: "Exists"
+#       effect: "NoSchedule"
+#     - key: "CriticalAddonsOnly"
+#       operator: "Exists"
 
 # values-nsm.yaml
-controller:
-  nginxplus: false
-  image:
-    repository: nginx/nginx-ingress
-    tag: "2.4.1"
-  enableLatencyMetrics: true
-nginxServiceMesh:
-  enable: true
-  enableEgress: true
+# controller:
+#   nginxplus: false
+#   image:
+#     repository: nginx/nginx-ingress
+#     tag: "2.4.1"
+#   enableLatencyMetrics: true
+# nginxServiceMesh:
+#   enable: true
+#   enableEgress: true
 
 # values-plus.yaml
 # controller:
