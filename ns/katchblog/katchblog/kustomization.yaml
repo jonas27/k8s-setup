@@ -2,3 +2,6 @@ resources:
 - deploy.yaml
 - ingress.yaml
 - service.yaml
+
+commonLabels:
+- app: katchblog

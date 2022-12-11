@@ -2,3 +2,6 @@ resources:
 - ingress.yaml
 - service.yaml
 - deploy.yaml
+
+commonLabels:
+- app: isso
