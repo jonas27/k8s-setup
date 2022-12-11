@@ -4,4 +4,4 @@ resources:
 - deploy.yaml
 
 commonLabels:
-- app: isso
+  app: isso

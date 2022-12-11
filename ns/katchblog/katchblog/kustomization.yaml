@@ -4,4 +4,4 @@ resources:
 - service.yaml
 
 commonLabels:
-- app: katchblog
+  app: katchblog
