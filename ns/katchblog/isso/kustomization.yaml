@@ -3,5 +3,10 @@ resources:
 - service.yaml
 - deploy.yaml
 
+configMapGenerator:
+- name: 
+  files:
+  - isso.cfg
+
 commonLabels:
   app: isso

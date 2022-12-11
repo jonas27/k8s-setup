@@ -25,9 +25,9 @@ spec:
             name: isso-config
       volumes:
       - name: isso-config
-        hostPath:
-          path: "/volumes/katchblog/isso-config"
+        configMap: 
+          name: isso.cfg
       - name: isso-storage
         hostPath:
-          path: "/volumes/katchblog/isso-storage"
+          path: "/volumes/katchblog/isso/isso-storage"
       restartPolicy: Always
