@@ -19,10 +19,10 @@ spec:
       #   namespace: katchblog
       #   path: "ns/katchblog/isso"
       #   targetRevision: main
-      - name: nginx-ingress
-        namespace: nginx-ingress
-        path: "ns/nginx-ingress/nginx-ingress"
-        targetRevision: main
+      # - name: nginx-ingress
+      #   namespace: nginx-ingress
+      #   path: "ns/nginx-ingress/nginx-ingress"
+      #   targetRevision: main
 
 
   template:
