@@ -417,7 +417,7 @@ nginxServiceMesh:
 # values-icp.yaml
 controller:
   kind: daemonset
-  nginxplus: true
+  nginxplus: false
   image:
     repository: mycluster.icp:8500/kube-system/nginx-plus-ingress
     tag: "2.4.1"
@@ -434,7 +434,7 @@ controller:
 
 # values-nsm.yaml
 controller:
-  nginxplus: true
+  nginxplus: false
   image:
     repository: nginx-plus-ingress
     tag: "2.4.1"
@@ -445,7 +445,7 @@ nginxServiceMesh:
 
 # values-plus.yaml
 controller:
-  nginxplus: true
+  nginxplus: false
   image:
     repository: nginx-plus-ingress
     tag: "2.4.1"
