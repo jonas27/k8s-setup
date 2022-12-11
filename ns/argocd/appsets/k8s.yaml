@@ -7,10 +7,10 @@ spec:
   generators:
   - list:
       elements:
-      - name: cert-manager
-        namespace: cert-manager
-        path: "ns/cert-manager/cert-manager"
-        targetRevision: main
+      # - name: cert-manager
+      #   namespace: cert-manager
+      #   path: "ns/cert-manager/cert-manager"
+      #   targetRevision: main
       # - name: katchblog
       #   namespace: katchblog
       #   path: "ns/katchblog/katchblog"
