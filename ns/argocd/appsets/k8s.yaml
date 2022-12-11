@@ -23,7 +23,8 @@ spec:
 
   template:
     metadata:
-      name: 'k8s'
+      name: '{{name}}'
+      namespace: argocd
     spec:
       project: default
       source:

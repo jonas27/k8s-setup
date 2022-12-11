@@ -466,8 +466,9 @@ spec:
             - ALL
           readOnlyRootFilesystem: true
           runAsNonRoot: true
-          seccompProfile:
-            type: RuntimeDefault
+          # disabled per https://github.com/argoproj/argo-cd/issues/9809#issuecomment-1298785315
+          # seccompProfile:
+          #   type: RuntimeDefault
         volumeMounts:
         - mountPath: /app/config/ssh
           name: ssh-known-hosts
