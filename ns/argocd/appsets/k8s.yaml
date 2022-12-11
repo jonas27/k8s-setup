@@ -28,7 +28,6 @@ spec:
       project: default
       source:
         repoURL: https://github.com/jonas27/k8s-setup.git
-        targetRevision: master
         path: '{{path}}'
         targetRevision: '{{targetRevision}}'
       destination:
