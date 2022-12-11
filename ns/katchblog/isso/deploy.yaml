@@ -13,20 +13,23 @@ spec:
     spec:
       containers:
       - name: isso
-        image: jonas27test/isso:latest
-        args: ["/isso/bin/isso","-c", "/config/isso.cfg"]
+        image: ghcr.io/isso-comments/isso:latest
+        args: ["/isso/bin/isso"]
         ports:
         - name: http
           containerPort: 8080
         volumeMounts:
           - mountPath: /db
             name: isso-storage
-          - mountPath: /config
+          - mountPath: /isso.cfg
             name: isso-config
       volumes:
       - name: isso-config
         configMap: 
           name: isso.cfg
+      - name: isso-ui
+        hostPath:
+          path: "/volumes/katchblog/isso/isso-storage"
       - name: isso-storage
         hostPath:
           path: "/volumes/katchblog/isso/isso-storage"
