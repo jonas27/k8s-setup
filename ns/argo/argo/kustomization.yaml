@@ -1,0 +1,13 @@
+namespace: argo
+
+resources:
+- ns.yaml
+- crd.yaml
+- rbac.yaml
+- network.yaml
+- cm.yaml
+- service.yaml
+- deploy.yaml
+- statefulset.yaml
+
+

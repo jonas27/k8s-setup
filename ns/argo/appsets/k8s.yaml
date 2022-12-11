@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: k8s
+  namespace: argo
+spec:
+  generators:
+  - list:
+      elements:
+      - name: cert-manager
+        namespace: cert-manager
+        path: "ns/cert-manager/cert-manager"
+      - name: katchblog
+        namespace: katchblog
+        path: "ns/katchblog/katchblog"
+      - name: isso
+        namespace: katchblog
+        path: "ns/katchblog/isso"
+
+
+  template:
+    metadata:
+      name: 'k8s'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/jonas27/k8s-setup.git
+        targetRevision: master
+        path: '{{path}}'
+      destination:
+        # server: '{{url}}'
+        namespace: '{{namespace}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
