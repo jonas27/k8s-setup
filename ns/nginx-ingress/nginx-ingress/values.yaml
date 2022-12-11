@@ -436,7 +436,7 @@ controller:
 controller:
   nginxplus: false
   image:
-    repository: nginx-ingress
+    repository: nginx/nginx-ingress
     tag: "2.4.1"
   enableLatencyMetrics: true
 nginxServiceMesh:
@@ -447,5 +447,5 @@ nginxServiceMesh:
 controller:
   nginxplus: false
   image:
-    repository: nginx-ingress
+    repository: nginx/nginx-ingress
     tag: "2.4.1"
