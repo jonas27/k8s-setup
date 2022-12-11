@@ -10,15 +10,15 @@ spec:
       - name: cert-manager
         namespace: cert-manager
         path: "ns/cert-manager/cert-manager"
-        targetRevision: master
+        targetRevision: main
       - name: katchblog
         namespace: katchblog
         path: "ns/katchblog/katchblog"
-        targetRevision: master
+        targetRevision: main
       - name: isso
         namespace: katchblog
         path: "ns/katchblog/isso"
-        targetRevision: master
+        targetRevision: main
 
 
   template:

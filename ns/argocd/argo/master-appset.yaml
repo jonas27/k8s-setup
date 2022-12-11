@@ -10,7 +10,7 @@ spec:
       - name: appsets
         namespace: argocd
         path: "ns/argocd/appsets"
-        targetRevision: master
+        targetRevision: main
 
   syncPolicy:
     preserveResourcesOnDeletion: true
