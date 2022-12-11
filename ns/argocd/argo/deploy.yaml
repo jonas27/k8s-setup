@@ -537,7 +537,7 @@ spec:
         name: var-files
       - emptyDir: {}
         name: plugins
-----
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:

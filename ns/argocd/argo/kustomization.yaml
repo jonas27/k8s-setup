@@ -9,5 +9,6 @@ resources:
 - service.yaml
 - deploy.yaml
 - statefulset.yaml
+- master-appset.yaml
 
 

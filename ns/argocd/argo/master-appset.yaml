@@ -1,25 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: k8s
+  name: master-appset
   namespace: argocd
 spec:
   generators:
   - list:
       elements:
-      - name: cert-manager
-        namespace: cert-manager
-        path: "ns/cert-manager/cert-manager"
-        targetRevision: master
-      - name: katchblog
-        namespace: katchblog
-        path: "ns/katchblog/katchblog"
-        targetRevision: master
-      - name: isso
-        namespace: katchblog
-        path: "ns/katchblog/isso"
+      - name: appsets
+        namespace: argocd
+        path: "ns/argocd/appsets"
         targetRevision: master
 
+  syncPolicy:
+    preserveResourcesOnDeletion: true
 
   template:
     metadata:
@@ -28,15 +22,14 @@ spec:
       project: default
       source:
         repoURL: https://github.com/jonas27/k8s-setup.git
-        targetRevision: master
-        path: '{{path}}'
         targetRevision: '{{targetRevision}}'
+        path: '{{path}}'
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: '{{namespace}}'
       syncPolicy:
         automated:
-          prune: true
+          prune: false
           selfHeal: true
         syncOptions:
         - CreateNamespace=true
