@@ -444,8 +444,8 @@ nginxServiceMesh:
   enableEgress: true
 
 # values-plus.yaml
-controller:
-  nginxplus: false
-  image:
-    repository: nginx/nginx-ingress
-    tag: "2.4.1"
+# controller:
+#   nginxplus: false
+#   image:
+#     repository: nginx/nginx-ingress
+#     tag: "2.4.1"
