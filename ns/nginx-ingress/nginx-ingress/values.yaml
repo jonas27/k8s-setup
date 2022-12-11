@@ -419,7 +419,7 @@ controller:
   kind: daemonset
   nginxplus: false
   image:
-    repository: mycluster.icp:8500/kube-system/nginx-plus-ingress
+    repository: mycluster.icp:8500/kube-system/nginx-ingress
     tag: "2.4.1"
   nodeSelector:
     beta.kubernetes.io/arch: "amd64"
@@ -436,7 +436,7 @@ controller:
 controller:
   nginxplus: false
   image:
-    repository: nginx-plus-ingress
+    repository: nginx-ingress
     tag: "2.4.1"
   enableLatencyMetrics: true
 nginxServiceMesh:
@@ -447,5 +447,5 @@ nginxServiceMesh:
 controller:
   nginxplus: false
   image:
-    repository: nginx-plus-ingress
+    repository: nginx-ingress
     tag: "2.4.1"
