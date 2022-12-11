@@ -1,4 +1,4 @@
-namespace: argo
+namespace: argocd
 
 resources:
 - ns.yaml
