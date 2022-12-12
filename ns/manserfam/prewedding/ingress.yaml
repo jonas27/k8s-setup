@@ -1,0 +1,26 @@
+# Dont use in production
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: prewedding
+  namespace: manserfam
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - prewedding.manserfam.com
+    - www.prewedding.manserfam.com
+    secretName: prewedding-cert
+  rules:
+  - host: prewedding.manserfam.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: prewedding
+            port: 
+              name: http
