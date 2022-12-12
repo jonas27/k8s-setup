@@ -13,3 +13,5 @@ helmCharts:
   releaseName: cert-manager
   valuesFile: values.yaml
 
+resources:
+- cluster-issuer.yaml
