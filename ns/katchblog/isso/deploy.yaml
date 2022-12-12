@@ -21,15 +21,12 @@ spec:
         volumeMounts:
           - mountPath: /db
             name: isso-storage
-          - mountPath: /isso.cfg
+          - mountPath: /config/
             name: isso-config
       volumes:
       - name: isso-config
         configMap: 
-          name: isso.cfg
-      - name: isso-ui
-        hostPath:
-          path: "/volumes/katchblog/isso/isso-storage"
+          name: isso-config
       - name: isso-storage
         hostPath:
           path: "/volumes/katchblog/isso/isso-storage"
