@@ -7,9 +7,6 @@ spec:
   selector:
   replicas: 1
   template:
-    metadata:
-      labels:
-        app: katchblog
     spec:
       containers:
       - name: katchblog
@@ -23,8 +20,5 @@ spec:
       volumes:
       - name: katchblog-storage
         hostPath:
-          path: "/volumes/katchblog"
-      - name: katchblog-tls
-        secret:
-          secretName: katchblog-secret
+          path: "/volumes/katchblog/katchblog/"
       restartPolicy: Always

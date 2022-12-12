@@ -7,5 +7,5 @@ spec:
   ports:
   - port: 80
     name: http
-    targetPort: 8080
+    targetPort: http
   selector:

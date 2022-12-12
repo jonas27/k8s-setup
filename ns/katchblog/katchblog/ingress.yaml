@@ -5,9 +5,10 @@ metadata:
   namespace: katchblog
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/cors-allow-origin: "https://katchblog.com"
-    nginx.ingress.kubernetes.io/rewrite-target: /*
 spec:
+  ingressClassName: nginx
   tls:
   - hosts:
     - katchblog.com
@@ -17,15 +18,17 @@ spec:
   - host: katchblog.com
     http:
       paths:
-      - path: /*
+      - path: /
         pathType: Prefix
         backend:
-          serviceName: katchblog
-          servicePort: 80
+          service:
+            name: katchblog
+            port: 
+              name: http
   - host: www.katchblog.com
     http:
       paths:
-      - path: /*
+      - path: /
         pathType: Prefix
         backend:
           service:
