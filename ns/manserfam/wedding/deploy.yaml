@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: prewedding
+  name: wedding
   namespace: manserfam
 spec: 
   replicas: 1
@@ -9,15 +9,15 @@ spec:
     spec:
       containers:
       - image: jonas27test/goserver:latest
-        name: prewedding
+        name: wedding
         ports:
         - name: http
           containerPort: 8080
         volumeMounts:
           - mountPath: /static
-            name: prewedding-storage
+            name: wedding-storage
       volumes:
-      - name: prewedding-storage
+      - name: wedding-storage
         hostPath:
-          path: "/volumes/manserfam/prewedding/wedding/static"
+          path: "/volumes/manserfam/wedding/wedding/static"
       restartPolicy: Always

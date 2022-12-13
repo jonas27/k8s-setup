@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: prewedding
+  name: italy21
   namespace: manserfam
 spec: 
   replicas: 1
@@ -9,15 +9,15 @@ spec:
     spec:
       containers:
       - image: jonas27test/goserver:latest
-        name: prewedding
+        name: italy21
         ports:
         - name: http
           containerPort: 8080
         volumeMounts:
           - mountPath: /static
-            name: prewedding-storage
+            name: italy21-storage
       volumes:
-      - name: prewedding-storage
+      - name: italy21-storage
         hostPath:
-          path: "/volumes/manserfam/prewedding/wedding/static"
+          path: "/volumes/manserfam/italy21/italy21/static"
       restartPolicy: Always

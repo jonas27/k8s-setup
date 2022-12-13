@@ -1,0 +1,9 @@
+namespace: manserfam
+
+resources:
+- ingress.yaml
+- svc.yaml
+- deploy.yaml
+
+commonLabels:
+  app: italy21

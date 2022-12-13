@@ -1,0 +1,26 @@
+# Dont use in production
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: italy21
+  namespace: manserfam
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - italy21.manserfam.com
+    - www.italy21.manserfam.com
+    secretName: italy21-cert
+  rules:
+  - host: italy21.manserfam.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: italy21
+            port: 
+              name: http
