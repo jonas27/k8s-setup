@@ -7,22 +7,37 @@ spec:
   generators:
   - list:
       elements:
-      # - name: cert-manager
-      #   namespace: cert-manager
-      #   path: "ns/cert-manager/cert-manager"
-      #   targetRevision: main
-      # - name: katchblog
-      #   namespace: katchblog
-      #   path: "ns/katchblog/katchblog"
-      #   targetRevision: main
-      # - name: isso
-      #   namespace: katchblog
-      #   path: "ns/katchblog/isso"
-      #   targetRevision: main
-      # - name: nginx-ingress
-      #   namespace: nginx-ingress
-      #   path: "ns/nginx-ingress/nginx-ingress"
-      #   targetRevision: main
+      - name: cert-manager
+        namespace: cert-manager
+        path: "ns/cert-manager/cert-manager"
+        targetRevision: main
+
+      - name: katchblog
+        namespace: katchblog
+        path: "ns/katchblog/katchblog"
+        targetRevision: main
+      - name: isso
+        namespace: katchblog
+        path: "ns/katchblog/isso"
+        targetRevision: main
+      
+      - name: italy21
+        namespace: manserfam
+        path: "ns/manserfam/italy21"
+        targetRevision: main
+      - name: prewedding
+        namespace: manserfam
+        path: "ns/manserfam/prewedding"
+        targetRevision: main
+      - name: wedding
+        namespace: manserfam
+        path: "ns/manserfam/wedding"
+        targetRevision: main
+
+      - name: nginx-ingress
+        namespace: nginx-ingress
+        path: "ns/nginx-ingress/nginx-ingress"
+        targetRevision: main
 
 
   template:

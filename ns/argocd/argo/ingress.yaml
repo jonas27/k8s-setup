@@ -1,0 +1,26 @@
+# Dont use in production
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd
+  namespace: argocd
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - argocd.manserfam.com
+    - www.argocd.manserfam.com
+    secretName: argocd-cert
+  rules:
+  - host: argocd.manserfam.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port: 
+              name: http
