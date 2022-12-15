@@ -12,6 +12,11 @@ spec:
         path: "ns/cert-manager/cert-manager"
         targetRevision: main
 
+      - name: ingress-nginx
+        namespace: ingress-nginx
+        path: "ns/ingress-nginx/ingress-nginx"
+        targetRevision: main
+
       - name: katchblog
         namespace: katchblog
         path: "ns/katchblog/katchblog"
@@ -32,11 +37,6 @@ spec:
       - name: wedding
         namespace: manserfam
         path: "ns/manserfam/wedding"
-        targetRevision: main
-
-      - name: nginx-ingress
-        namespace: nginx-ingress
-        path: "ns/nginx-ingress/nginx-ingress"
         targetRevision: main
 
 

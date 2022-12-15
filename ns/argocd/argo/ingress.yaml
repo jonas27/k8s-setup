@@ -1,18 +1,21 @@
-# Dont use in production
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: argocd
+  name: argocd-server-ingress
   namespace: argocd
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  #   kubernetes.io/ingress.class: nginx
+  #   kubernetes.io/tls-acme: "true"
+    # nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    # nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
     - argocd.manserfam.com
     - www.argocd.manserfam.com
-    secretName: argocd-cert
+    secretName: argocd-cert # do not change, this is provided by Argo CD
   rules:
   - host: argocd.manserfam.com
     http:
