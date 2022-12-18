@@ -4,13 +4,12 @@ metadata:
   name: katchblog
   namespace: katchblog
 spec: 
-  selector:
   replicas: 1
   template:
     spec:
       containers:
       - name: katchblog
-        image: jonas27test/goserver:v1.0.0
+        image: jonas27test/goserver@sha256:8ae229414f942ccfb7c531952bd4a929607d7a0db60746aefebc4ab02860620e
         ports:
         - name: http
           containerPort: 8080

@@ -7,7 +7,7 @@ spec:
   generators:
   - list:
       elements:
-      - name: k8sw
+      - name: master-appset
         namespace: argocd
         path: "ns/argocd/appsets"
         targetRevision: main
