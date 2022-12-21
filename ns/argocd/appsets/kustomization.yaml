@@ -1,4 +1,5 @@
 namespace: argocd
 
 resources:
+- master-appset.yaml
 - k8s.yaml

@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: imagechecker
+  namespace: tools
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - imagechecker.manserfam.com
+    secretName: imagechecker-cert
+  rules:
+  - host: imagechecker.manserfam.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: imagechecker
+            port: 
+              name: http

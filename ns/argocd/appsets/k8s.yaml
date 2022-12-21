@@ -39,6 +39,11 @@ spec:
         path: "ns/manserfam/wedding"
         targetRevision: main
 
+      - name: imagechecker
+        namespace: tools
+        path: "ns/tools/imagechecker"
+        targetRevision: main
+
 
   template:
     metadata:

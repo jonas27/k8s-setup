@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: tools
+
+resources:
+- rbac.yaml
+- deploy.yaml
+- ingress.yaml
+- service.yaml
+
+commonLabels:
+  app: imagechecker
+
+images:
+- name: jonas27/imagechecker
+  newTag: master-1671657213
+  digest: sha256:12bc2c056cc4f59c976c17e4fde549e113272750bd415f4835e35bfed534c866
