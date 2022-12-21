@@ -26,6 +26,11 @@ spec:
         path: "ns/katchblog/isso"
         targetRevision: main
       
+      - name: metrics-server
+        namespace: kube-system
+        path: "ns/kube-system/metrics-server"
+        targetRevision: main
+      
       - name: italy21
         namespace: manserfam
         path: "ns/manserfam/italy21"
