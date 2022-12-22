@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: photos2022
+  namespace: manserfam
+spec: 
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - image: jonas27/photos2022:latest
+        name: wedding
+        ports:
+        - name: http
+          containerPort: 8080
+      restartPolicy: Always

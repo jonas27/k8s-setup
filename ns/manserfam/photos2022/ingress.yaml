@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: photos2022
+  namespace: manserfam
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - photos2022.manserfam.com
+    - www.photos2022.manserfam.com
+    secretName: photos2022-cert
+  rules:
+  - host: photos2022.manserfam.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: photos2022
+            port: 
+              name: http

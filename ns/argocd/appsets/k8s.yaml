@@ -39,6 +39,10 @@ spec:
         namespace: manserfam
         path: "ns/manserfam/prewedding"
         targetRevision: main
+      - name: photos2022
+        namespace: manserfam
+        path: "ns/manserfam/photos2022"
+        targetRevision: main
       - name: wedding
         namespace: manserfam
         path: "ns/manserfam/wedding"
