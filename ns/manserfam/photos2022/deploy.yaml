@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
       - image: jonas27/photos2022
-        name: wedding
+        name: photos2022
         ports:
         - name: http
           containerPort: 8080
