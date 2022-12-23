@@ -8,7 +8,7 @@ spec:
   template:
     spec:
       containers:
-      - image: jonas27/photos2022:latest
+      - image: jonas27/photos2022
         name: wedding
         ports:
         - name: http
