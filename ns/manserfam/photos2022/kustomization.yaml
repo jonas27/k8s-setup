@@ -11,4 +11,4 @@ commonLabels:
 images:
 - name: jonas27/photos2022
   newTag: 0.1.0
-  digest: sha256:badbff5bcf72daf6ec0802eacbe79cf5631c3503308a5abad05d4c6c7a9a5cfa
+  digest: sha256:877d62a3332eb32fd70453b1ac4064eee5dd3d88de25555641c9b2fdadcdb1c1
